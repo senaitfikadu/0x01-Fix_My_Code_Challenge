@@ -14,6 +14,10 @@ def not_found(error):
     """ json 404 page """
     return make_response(jsonify({"error": "Not found"}), 404)
 
+@app.route("/api/v1/status", methods=["GET"], strict_slashes=False)
+def status():
+    """Status of the web server"""
+    return jsonify({"status": "OK"})
 
 if __name__ == "__main__":
     # python -m api.v1.app 
